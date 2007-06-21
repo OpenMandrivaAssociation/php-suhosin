@@ -1,11 +1,11 @@
 %define modname suhosin
 %define soname %{modname}.so
-%define inifile Z99_%{modname}.ini
+%define inifile Z98_%{modname}.ini
 
 Summary:	Suhosin extension module for PHP
 Name:		php-%{modname}
 Version:	0.9.20
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		Development/PHP
 License:	PHP License
 URL:		http://www.hardened-php.net/suhosin/
