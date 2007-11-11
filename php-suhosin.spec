@@ -5,7 +5,7 @@
 Summary:	Suhosin extension module for PHP
 Name:		php-%{modname}
 Version:	0.9.20
-Release:	%mkrel 6
+Release:	%mkrel 7
 Group:		Development/PHP
 License:	PHP License
 URL:		http://www.hardened-php.net/suhosin/
@@ -43,6 +43,18 @@ install -d %{buildroot}%{_sysconfdir}/php.d
 
 install -m0755 %{soname} %{buildroot}%{_libdir}/php/extensions/
 install -m0644 suhosin.ini %{buildroot}%{_sysconfdir}/php.d/%{inifile}
+
+%post
+if [ -f /var/lock/subsys/httpd ]; then
+    %{_initrddir}/httpd restart >/dev/null || :
+fi
+
+%postun
+if [ "$1" = "0" ]; then
+    if [ -f /var/lock/subsys/httpd ]; then
+	%{_initrddir}/httpd restart >/dev/null || :
+    fi
+fi
 
 %clean
 rm -rf %{buildroot}
