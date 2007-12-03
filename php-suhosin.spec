@@ -4,8 +4,8 @@
 
 Summary:	Suhosin extension module for PHP
 Name:		php-%{modname}
-Version:	0.9.20
-Release:	%mkrel 7
+Version:	0.9.22
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://www.hardened-php.net/suhosin/
@@ -23,7 +23,6 @@ which means it is compatible to 3rd party binary extension like ZendOptimizer.
 %prep
 
 %setup -q -n %{modname}-%{version}
-[ "../package.xml" != "/" ] && mv ../package.xml .
 
 %build
 %serverbuild
@@ -61,6 +60,6 @@ rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
-%doc CREDITS package.xml tests Changelog
+%doc CREDITS tests Changelog
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
