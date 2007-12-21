@@ -12,6 +12,7 @@ URL:		http://www.hardened-php.net/suhosin/
 Source0:	%{modname}-%{version}.tgz
 Source1:	%{modname}-%{version}.tgz.sig
 BuildRequires:	php-devel >= 3:5.2.0
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Suhosin is an advanced protection system for PHP installations. It was designed
