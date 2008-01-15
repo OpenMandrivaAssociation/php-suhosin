@@ -4,7 +4,7 @@
 
 Summary:	Suhosin extension module for PHP
 Name:		php-%{modname}
-Version:	0.9.22
+Version:	0.9.23
 Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
