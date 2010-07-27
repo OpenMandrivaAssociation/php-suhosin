@@ -4,13 +4,13 @@
 
 Summary:	Suhosin extension module for PHP
 Name:		php-%{modname}
-Version:	0.9.31
+Version:	0.9.32.1
 Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://www.hardened-php.net/suhosin/
-Source0:	%{modname}-%{version}.tgz
-Source1:	%{modname}-%{version}.tgz.sig
+Source0:	%{modname}-%{version}.tar.gz
+Source1:	%{modname}-%{version}.tar.gz.sig
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
