@@ -4,13 +4,14 @@
 
 Summary:	Suhosin extension module for PHP
 Name:		php-%{modname}
-Version:	0.9.33
-Release:	%mkrel 2
+Version:	0.9.34
+Release:	%mkrel 0.0.git716a292.1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://www.hardened-php.net/suhosin/
-Source0:	http://download.suhosin.org/%{modname}-%{version}.tgz
-Source1:	http://download.suhosin.org/%{modname}-%{version}.tgz.sig
+#Source0:	http://download.suhosin.org/%{modname}-%{version}.tgz
+#Source1:	http://download.suhosin.org/%{modname}-%{version}.tgz.sig
+Source0:	stefanesser-suhosin-716a292.tar.gz
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -22,10 +23,8 @@ which means it is compatible to 3rd party binary extension like ZendOptimizer.
 
 %prep
 
-%setup -q -n %{modname}-%{version}
-
-# nuke mac files (duh!)
-find -name "\._*" | xargs rm -f
+#%%setup -q -n %{modname}-%{version}
+%setup -q -n stefanesser-suhosin-716a292
 
 %build
 %serverbuild
