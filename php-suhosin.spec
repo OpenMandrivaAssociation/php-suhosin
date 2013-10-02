@@ -5,10 +5,10 @@
 Summary:	Suhosin extension module for PHP
 Name:		php-%{modname}
 Version:	0.9.34
-Release:	%mkrel 0.1.git1fba865.1
+Release:	0.1.git1fba865.1
 Group:		Development/PHP
 License:	PHP License
-URL:		http://www.hardened-php.net/suhosin/
+Url:		http://www.hardened-php.net/suhosin/
 #Source0:	http://download.suhosin.org/%{modname}-%{version}.tgz
 #Source1:	http://download.suhosin.org/%{modname}-%{version}.tgz.sig
 Source0:	stefanesser-suhosin-1fba865.tar.xz
@@ -21,23 +21,20 @@ and the PHP core. Suhosin is binary compatible to normal PHP installation,
 which means it is compatible to 3rd party binary extension like ZendOptimizer.
 
 %prep
-
-#%%setup -q -n %{modname}-%{version}
-%setup -q -n stefanesser-suhosin-1fba865
+%setup -qn stefanesser-suhosin-1fba865
 
 %build
 %serverbuild
 
 phpize
-%configure2_5x --with-libdir=%{_lib} \
-    --with-%{modname}=shared,%{_prefix}
+%configure2_5x \
+	--with-libdir=%{_lib} \
+	--with-%{modname}=shared,%{_prefix}
 
 %make
 mv modules/*.so %{modname}.so
 
 %install
-rm -rf %{buildroot}
-
 install -d %{buildroot}%{_libdir}/php/extensions
 install -d %{buildroot}%{_sysconfdir}/php.d
 
@@ -57,7 +54,7 @@ if [ "$1" = "0" ]; then
 fi
 
 %files 
-%defattr(-,root,root)
 %doc CREDITS tests Changelog
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
+
