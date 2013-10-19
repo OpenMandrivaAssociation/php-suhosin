@@ -4,14 +4,15 @@
 
 Summary:	Suhosin extension module for PHP
 Name:		php-%{modname}
-Version:	0.9.34
-Release:	0.1.git1fba865.1
+Version:	0.9.33
+Epoch:		1
+Release:	1
 Group:		Development/PHP
 License:	PHP License
 Url:		http://www.hardened-php.net/suhosin/
-#Source0:	http://download.suhosin.org/%{modname}-%{version}.tgz
-#Source1:	http://download.suhosin.org/%{modname}-%{version}.tgz.sig
-Source0:	stefanesser-suhosin-1fba865.tar.xz
+Source0:	http://download.suhosin.org/%{modname}-%{version}.tgz
+Source1:	http://download.suhosin.org/%{modname}-%{version}.tgz.sig
+Patch0:		https://raw.github.com/NewEraCracker/suhosin-patches/master/patches/suhosin-0.9.33.php55.diff
 BuildRequires:	php-devel >= 3:5.2.0
 
 %description
@@ -21,7 +22,8 @@ and the PHP core. Suhosin is binary compatible to normal PHP installation,
 which means it is compatible to 3rd party binary extension like ZendOptimizer.
 
 %prep
-%setup -qn stefanesser-suhosin-1fba865
+%setup -qn suhosin-%{version}
+%apply_patches
 
 %build
 %serverbuild
