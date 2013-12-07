@@ -6,7 +6,7 @@ Summary:	Suhosin extension module for PHP
 Name:		php-%{modname}
 Version:	0.9.33
 Epoch:		1
-Release:	3
+Release:	4
 Group:		Development/PHP
 License:	PHP License
 Url:		http://www.hardened-php.net/suhosin/
