@@ -4,15 +4,14 @@
 
 Summary:	Suhosin extension module for PHP
 Name:		php-%{modname}
-Version:	0.9.33
+Version:	0.9.38
 Epoch:		1
-Release:	10
+Release:	1
 Group:		Development/PHP
 License:	PHP License
 Url:		http://www.hardened-php.net/suhosin/
-Source0:	http://download.suhosin.org/%{modname}-%{version}.tgz
-Source1:	http://download.suhosin.org/%{modname}-%{version}.tgz.sig
-Patch0:		https://raw.github.com/NewEraCracker/suhosin-patches/master/patches/suhosin-0.9.33.php55.diff
+Source0:	http://download.suhosin.org/%{modname}-%{version}.tar.gz
+Source1:	http://download.suhosin.org/%{modname}-%{version}.tar.gz.sig
 BuildRequires:	php-devel >= 3:5.2.0
 
 %description
