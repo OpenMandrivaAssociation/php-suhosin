@@ -22,7 +22,7 @@ which means it is compatible to 3rd party binary extension like ZendOptimizer.
 
 %prep
 %setup -qn suhosin-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 %serverbuild
