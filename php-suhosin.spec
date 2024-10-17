@@ -9,7 +9,7 @@ Epoch:		1
 Release:	3
 Group:		Development/PHP
 License:	PHP License
-Url:		http://www.hardened-php.net/suhosin/
+Url:		https://www.hardened-php.net/suhosin/
 Source0:	http://download.suhosin.org/%{modname}-%{version}.tar.gz
 Source1:	http://download.suhosin.org/%{modname}-%{version}.tar.gz.sig
 BuildRequires:	php-devel >= 3:5.2.0
