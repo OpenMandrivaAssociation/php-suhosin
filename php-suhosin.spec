@@ -12,6 +12,11 @@ License:	PHP License
 Url:		https://www.hardened-php.net/suhosin/
 Source0:	http://download.suhosin.org/%{modname}-%{version}.tar.gz
 Source1:	http://download.suhosin.org/%{modname}-%{version}.tar.gz.sig
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	php-devel >= 3:5.2.0
 
 %description
